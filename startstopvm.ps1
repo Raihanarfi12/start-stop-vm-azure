@@ -70,7 +70,7 @@ $VMs = $VMName.split(',')
 foreach ($VM in $VMs) {
     switch ($Action) {
         "Start" {
-            $VirM = Get-AzVM -ResourceGroupName $ResourceGroupName -ErrorAction Stop
+            $VirM = Get-AzVM -ResourceGroupName $ResourceGroupName -Name $VM -ErrorAction Stop
             # Start the VM
             try {
                 Write-Output "Starting VM $($VirM.Name)..."
